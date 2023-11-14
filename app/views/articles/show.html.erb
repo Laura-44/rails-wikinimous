@@ -1,0 +1,22 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../articles">Wikinimous</a>
+    <a class="navbar-brand" href="../articles/new">New Article</a>
+  </div>
+</nav>
+<div class="container">
+<h2><%= @article.title %></h2>
+<p><%= @article.content %></p>
+
+<%= link_to 'Back to list', articles_path, class: "text-decoration-none" %>
+<br>
+<%= link_to 'New article', new_article_path, class: "text-decoration-none" %>
+<br>
+<%= link_to 'Update article', edit_article_path, class: "text-decoration-none" %>
+<br>
+<%= link_to "Delete article",
+  article_path(@article),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+  <i class="fa-solid fa-trash"></i>
+</div>
